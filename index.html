@@ -3,82 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minecraft 模組管理</title>
+  <title></title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <div class="app-container">
     <nav class="sidebar">
-      <h2 class="title">Minecraft 模組管理</h2>
-      <button class="nav-item active" data-tab="pageA">補助模組</button>
-      <button class="nav-item" data-tab="pageB">優化與修復</button>
-      <button class="nav-item" data-tab="pageC">Masa系列</button>
-      <button class="nav-item" data-tab="pageD">Modrinth</button>
-      <button class="nav-item" data-tab="pageE">CurseForge</button>
+      <h2 class="title" id="pageTitle"></h2>
+      <div id="navContainer"></div>
     </nav>
     <div class="content-container">
-      <div class="top-bar">Minecraft 模組總覽</div>
-      <div class="content active" id="pageA">
-        <h2>補助模組</h2>
-        <input id="searchA" class="search-box" type="text" placeholder="🔍 搜尋模組..." />
-        <table>
-          <tr><th>名稱</th><th>官網</th><th>下載</th><th>版本</th></tr>
-          <tr>
-            <td>OptiFine</td>
-            <td><a href="https://optifine.net" target="_blank">官網</a></td>
-            <td><a href="https://optifine.net/downloads" target="_blank">下載</a></td>
-            <td>1.20</td>
-          </tr>
-        </table>
-      </div>
-      <div class="content" id="pageB">
-        <h2>優化與修復</h2>
-        <input id="searchB" class="search-box" type="text" placeholder="🔍 搜尋模組..." />
-        <table>
-          <tr><th>名稱</th><th>官網</th><th>下載</th><th>版本</th></tr>
-          <tr>
-            <td>Sodium</td>
-            <td><a href="https://modrinth.com/mod/sodium" target="_blank">官網</a></td>
-            <td><a href="https://modrinth.com/mod/sodium/downloads" target="_blank">下載</a></td>
-            <td>1.20</td>
-          </tr>
-          <tr>
-            <td>FerriteCore</td>
-            <td><a href="https://modrinth.com/mod/ferritecore" target="_blank">官網</a></td>
-            <td><a href="https://modrinth.com/mod/ferritecore/downloads" target="_blank">下載</a></td>
-            <td>1.20</td>
-          </tr>
-        </table>
-      </div>
-      <div class="content" id="pageC">
-        <h2>Masa系列</h2>
-        <input id="searchC" class="search-box" type="text" placeholder="🔍 搜尋模組..." />
-        <table>
-          <tr><th>名稱</th><th>官網</th><th>下載</th><th>版本</th></tr>
-          <tr>
-            <td>Litematica</td>
-            <td><a href="https://www.curseforge.com/minecraft/mc-mods/litematica" target="_blank">官網</a></td>
-            <td><a href="https://www.curseforge.com/minecraft/mc-mods/litematica/files" target="_blank">下載</a></td>
-            <td>1.20</td>
-          </tr>
-          <tr>
-            <td>MiniHUD</td>
-            <td><a href="https://www.curseforge.com/minecraft/mc-mods/minihud" target="_blank">官網</a></td>
-            <td><a href="https://www.curseforge.com/minecraft/mc-mods/minihud/files" target="_blank">下載</a></td>
-            <td>1.20</td>
-          </tr>
-        </table>
-      </div>
-      <div class="content" id="pageD">
-        <h2>Modrinth</h2>
-        <p><a href="https://modrinth.com/" target="_blank">🔗 Modrinth 官網</a></p>
-        <p>Modrinth 是一個開源、高效能的模組平台。</p>
-      </div>
-      <div class="content" id="pageE">
-        <h2>CurseForge</h2>
-        <p><a href="https://www.curseforge.com/minecraft/mc-mods" target="_blank">🔗 CurseForge 官網</a></p>
-        <p>CurseForge 是目前最大的 Minecraft 模組庫，擁有數萬個模組。</p>
-      </div>
+      <div class="top-bar" id="topBar"></div>
+      <div id="pagesContainer"></div>
     </div>
   </div>
   <script src="script.js"></script>
