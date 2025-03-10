@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainContents = document.querySelectorAll(".main-content");
   const subTabs = document.querySelectorAll(".sub-tab");
   const subContents = document.querySelectorAll(".tab-content");
+  const searchInput = document.getElementById("modSearch");
 
   // 主選單切換
   mainTabs.forEach(button => {
@@ -36,4 +37,27 @@ document.addEventListener("DOMContentLoaded", function () {
           this.classList.add("active");
       });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      const searchText = searchInput.value.toLowerCase();
+      const tables = document.querySelectorAll(".tab-content table");
+
+      tables.forEach(table => {
+        const rows = table.querySelectorAll("tr");
+
+        rows.forEach((row, index) => {
+          if (index === 0) return; // 跳过表头
+
+          const modName = row.querySelector("td:first-child").textContent.toLowerCase();
+
+          if (modName.includes(searchText)) {
+            row.style.display = ""; // 显示匹配的行
+          } else {
+            row.style.display = "none"; // 隐藏不匹配的行
+          }
+        });
+      });
+    });
+  }
 });
