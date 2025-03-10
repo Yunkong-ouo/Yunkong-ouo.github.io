@@ -5,7 +5,8 @@
     {"name": "優化與修復", "dataTab": "pageB"},
     {"name": "Masa系列", "dataTab": "pageC"},
     {"name": "Modrinth", "dataTab": "pageD"},
-    {"name": "CurseForge", "dataTab": "pageE"}
+    {"name": "CurseForge", "dataTab": "pageE"},
+    {"name": "test1", "dataTab": "pageF"}
   ],
   "pages": {
     "補助模組": [
@@ -51,6 +52,20 @@
     "CurseForge": {
       "官網": "https://www.curseforge.com/minecraft/mc-mods",
       "描述": "CurseForge 是目前最大的 Minecraft 模組庫，擁有數萬個模組。"
-    }
+    },
+    "test1": [
+      {
+        "名稱": "114514",
+        "官網": "https://114514.com",
+        "下載": "https://114514.com",
+        "版本": "22w23a"
+      },
+      {
+        "名稱": "1919810",
+        "官網": "https://114514.com",
+        "下載": "https://114514.com",
+        "版本": "22w23a"
+      }
+    ]
   }
 }
