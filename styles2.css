@@ -1,0 +1,133 @@
+/* 基本設定 */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 表單設置 */
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+input[type="text"], input[type="number"], input[type="color"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="color"]:focus {
+  outline: none;
+  border-color: #5b9bd5;
+}
+
+/* 當未勾選「字體顏色」選項時，隱藏顏色選擇器 */
+input[value=color]:not(:checked) ~ input[name=colorValue] {
+  display: none;
+}
+
+/* 當未勾選「字體大小」選項時，隱藏字體大小輸入框 */
+input[value=size]:not(:checked) ~ input[name=sizeValue] {
+  display: none;
+}
+
+/* 按鈕 */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* 輸出區域 */
+#outputContainer[data-hidden] {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+#outputContainer {
+  margin-top: 20px;
+  text-align: center;
+  transition: opacity 0.3s ease-in;
+}
+
+#output {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #5b9bd5;
+}
+
+/* 響應式設計 */
+@media (min-width: 768px) {
+  form {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+  }
+}

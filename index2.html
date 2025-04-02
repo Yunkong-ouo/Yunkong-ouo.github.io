@@ -1,105 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unity富文本生成器</title>
+<link rel="stylesheet" href="styles2.css">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft 模組列表</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<h1>Unity富文本生成器</h1>
 
-<body>
-  <div class="container">
-    <h1>Minecraft 模組總覽</h1>
+<form id="form">
+  <ul>
+    <li>
+      樣式
+      <ul>
+        <li>
+          <input type="checkbox" name="tag" value="b" id="b" />
+          <label for="b">粗體</label>
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="i" id="i" />
+          <label for="i">斜體</label>
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="color" id="color" checked />
+          <label for="color">字體顏色</label>
+          <input type="color" name="colorValue" value="#19d2b3" />
+        </li>
+        <li>
+          <input type="checkbox" name="tag" value="size" id="size" />
+          <label for="size">字體大小</label>
+          <input type="number" name="sizeValue" value="40" />
+        </li>
+      </ul>
+    </li>
+    <li>
+      <label for="text">文本</label>
+      <input type="text" name="text" value="Test" />
+    </li>
+  </ul>
+  <button type="submit">生成</button>
+</form>
 
-    <!-- 第一層選項卡 -->
-    <div class="tabs">
-      <button class="tab-btn main-tab active" data-tab="modList">模組列表</button>
-      <button class="tab-btn main-tab" data-tab="modSites">模組網站</button>
-    </div>
+<div id="outputContainer" data-hidden>
+  <textarea id="output" readonly rows="4" cols="50"></textarea>
+  （已自動複製到剪貼簿）
+</div>
 
-    <!-- 模組列表內容 -->
-    <div class="main-content active" id="modList">
-      <div class="tabs">
-        <button class="tab-btn sub-tab active" data-tab="modsA">補助模組</button>
-        <button class="tab-btn sub-tab" data-tab="modsB">優化與修復</button>
-        <button class="tab-btn sub-tab" data-tab="modsC">Masa系列</button>
-      </div>
-
-      <div class="tab-content active" id="modsA">
-        <table>
-          <tr>
-            <th>模組名稱</th>
-            <th>官網</th>
-            <th>下載</th>
-            <th>版本</th>
-          </tr>
-          <tr>
-            <td>OptiFine</td>
-            <td><a href="https://optifine.net" target="_blank">官網</a></td>
-            <td><a href="https://optifine.net/downloads" target="_blank">下載</a></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="tab-content" id="modsB">
-        <table>
-          <tr>
-            <th>模組名稱</th>
-            <th>官網</th>
-            <th>下載</th>
-            <th>版本</th>
-          </tr>
-          <tr>
-            <td>OptiFine</td>
-            <td><a href="https://optifine.net" target="_blank">官網</a></td>
-            <td><a href="https://optifine.net/downloads" target="_blank">下載</a></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="tab-content" id="modsC">
-        <table>
-          <tr>
-            <th>模組名稱</th>
-            <th>官網</th>
-            <th>下載</th>
-            <th>版本</th>
-          </tr>
-          <tr>
-            <td>OptiFine</td>
-            <td><a href="https://optifine.net" target="_blank">官網</a></td>
-            <td><a href="https://optifine.net/downloads" target="_blank">下載</a></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- 模組網站內容 -->
-    <div class="main-content" id="modSites">
-      <div class="tabs">
-        <button class="tab-btn sub-tab active" data-tab="modrinth">Modrinth</button>
-        <button class="tab-btn sub-tab" data-tab="curseforge">CurseForge</button>
-      </div>
-
-      <div class="tab-content active" id="modrinth">
-        <h2>Modrinth</h2>
-        <p><a href="https://modrinth.com/" target="_blank">🔗 Modrinth 官網</a></p>
-        <p>Modrinth 是一個開源、高效能的模組平台。</p>
-      </div>
-
-      <div class="tab-content" id="curseforge">
-        <h2>CurseForge</h2>
-        <p><a href="https://www.curseforge.com/minecraft/mc-mods" target="_blank">🔗 CurseForge 官網</a></p>
-        <p>CurseForge 是目前最大的 Minecraft 模組庫，擁有數萬個模組。</p>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+<script src="script2.js" type="module"></script>

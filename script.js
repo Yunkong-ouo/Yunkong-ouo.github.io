@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const table = document.createElement("table");
           const thead = document.createElement("thead");
           const headerRow = document.createElement("tr");
-          ["名稱", "官網", "下載", "版本"].forEach(text => {
+          ["名稱", "官網", "下載", "版本", "描述"].forEach(text => {
             const th = document.createElement("th");
             th.textContent = text;
             headerRow.appendChild(th);
@@ -59,10 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
             tdDownload.appendChild(aDownload);
             const tdVersion = document.createElement("td");
             tdVersion.textContent = item["版本"];
+            const tdDescription = document.createElement("td");
+            tdDescription.textContent = item["描述"] || "-";
             tr.appendChild(tdName);
             tr.appendChild(tdWebsite);
             tr.appendChild(tdDownload);
             tr.appendChild(tdVersion);
+            tr.appendChild(tdDescription);
             tbody.appendChild(tr);
           });
           table.appendChild(tbody);
