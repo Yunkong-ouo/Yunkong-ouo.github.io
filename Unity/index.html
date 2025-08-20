@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity富文本生成器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Unity富文本生成器</h1>
+  </header>
+  <main>
+    <section class="generator">
+      <form id="form">
+        <fieldset>
+          <legend>樣式設定</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="tag" value="b" id="b" />
+              <label for="b">粗體</label>
+            </li>
+            <li>
+              <input type="checkbox" name="tag" value="i" id="i" />
+              <label for="i">斜體</label>
+            </li>
+            <li>
+              <input type="checkbox" name="tag" value="color" id="color" checked />
+              <label for="color">字體顏色</label>
+              <input type="color" name="colorValue" value="#19d2b3" id="colorValue" />
+            </li>
+            <li>
+              <input type="checkbox" name="tag" value="size" id="size" />
+              <label for="size">字體大小</label>
+              <input type="number" name="sizeValue" value="40" />
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>文本內容</legend>
+          <label for="text">文本</label>
+          <input type="text" name="text" id="text" value="範例文本" />
+        </fieldset>
+        <button type="submit">生成</button>
+      </form>
+    </section>
+    <section id="outputContainer" data-hidden>
+      <textarea id="output" readonly rows="4" cols="50"></textarea>
+      <p>（已自動複製到剪貼簿）</p>
+    </section>
+  </main>
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>

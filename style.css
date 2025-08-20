@@ -1,0 +1,208 @@
+:root {
+  --bg-1: 255, 99, 132;
+  --bg-2: 54, 162, 235;
+  --card-bg: 255, 255, 255;
+  --text-1: 20, 24, 33;
+  --text-2: 87, 96, 111;
+  --shadow: 16, 24, 40;
+  --blur: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, "Noto Sans TC",
+    Arial, "Microsoft JhengHei", sans-serif;
+  color: rgb(var(--text-1));
+  background: #0b1020;
+  overflow-x: hidden;
+}
+
+/* 漸層背景 + 噪點 */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(var(--bg-1), 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      1200px 600px at 100% 0%,
+      rgba(var(--bg-2), 0.25),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0b1020 0%, #0b1020 60%, #0e1428 100%);
+  pointer-events: none;
+  z-index: -2;
+}
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cdefs%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='transparent'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
+}
+
+/* 頁首/頁尾 */
+.site-header {
+  text-align: center;
+  padding: 48px 20px 28px;
+}
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: clamp(24px, 2.8vw, 36px);
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.site-footer {
+  display: grid;
+  place-items: center;
+  padding: 28px 16px 40px;
+}
+.theme-toggle {
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(var(--blur));
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+/* 4 宮格 */
+.grid {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 8px 0 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 */
+  gap: 22px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  } /* 小螢幕自動單欄 */
+}
+
+/* 卡片樣式（玻璃質感） */
+.card {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  border-radius: 20px;
+  background: rgba(var(--card-bg), 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: clip;
+  box-shadow: 0 10px 30px rgba(var(--shadow), 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(var(--blur));
+  will-change: transform, box-shadow;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0) 40%
+  );
+  border-radius: 22px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(var(--shadow), 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.card:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18),
+    0 12px 36px rgba(var(--shadow), 0.34);
+}
+
+/* 內容排版 */
+.card-inner {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 8px;
+  padding: clamp(18px, 2.4vw, 24px);
+  min-height: 160px;
+}
+.icon {
+  font-size: 34px;
+  line-height: 1;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+.card h2 {
+  margin: 2px 0 0;
+  color: #fff;
+  font-size: clamp(18px, 2.2vw, 22px);
+  letter-spacing: 0.3px;
+}
+.card p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+
+/* 亮/暗主題切換 */
+.light {
+  --card-bg: 255, 255, 255;
+  --text-1: 18, 20, 28;
+  --text-2: 70, 78, 92;
+}
+.light body {
+  background: #f7f8fb;
+}
+.light .bg {
+  background: radial-gradient(
+      1000px 500px at 0% -10%,
+      rgba(255, 184, 108, 0.3),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 500px at 100% 0%,
+      rgba(108, 201, 255, 0.3),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #eef2f7 0%, #f7f8fb 100%);
+}
+.light .subtitle {
+  color: rgba(0, 0, 0, 0.6);
+}
+.light .card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.light .card p {
+  color: rgba(0, 0, 0, 0.65);
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Minecraft 模組管理",
+  "nav": [
+    {"name": "補助模組", "dataTab": "pageA"},
+    {"name": "優化與修復", "dataTab": "pageB"},
+    {"name": "Masa系列", "dataTab": "pageC"},
+    {"name": "Modrinth", "dataTab": "pageD"},
+    {"name": "CurseForge", "dataTab": "pageE"}
+  ],
+  "pages": {
+    "補助模組": [
+      {
+        "名稱": "OptiFine",
+        "官網": "https://optifine.net",
+        "下載": "https://optifine.net/downloads",
+        "版本": "1.20",
+        "描述": "s"
+      }
+    ],
+    "優化與修復": [
+      {
+        "名稱": "Sodium",
+        "官網": "https://modrinth.com/mod/sodium",
+        "下載": "https://modrinth.com/mod/sodium/downloads",
+        "版本": "1.20",
+        "描述": "s"
+      },
+      {
+        "名稱": "FerriteCore",
+        "官網": "https://modrinth.com/mod/ferritecore",
+        "下載": "https://modrinth.com/mod/ferritecore/downloads",
+        "版本": "1.20",
+        "描述": "s"
+      }
+    ],
+    "Masa系列": [
+      {
+        "名稱": "Litematica",
+        "官網": "https://www.curseforge.com/minecraft/mc-mods/litematica",
+        "下載": "https://www.curseforge.com/minecraft/mc-mods/litematica/files",
+        "版本": "1.20",
+        "描述": "s"
+      },
+      {
+        "名稱": "MiniHUD",
+        "官網": "https://www.curseforge.com/minecraft/mc-mods/minihud",
+        "下載": "https://www.curseforge.com/minecraft/mc-mods/minihud/files",
+        "版本": "1.20",
+        "描述": "s"
+      }
+    ],
+    "Modrinth": {
+      "官網": "https://modrinth.com/",
+      "描述": "Modrinth 是一個開源、高效能的模組平台。"
+    },
+    "CurseForge": {
+      "官網": "https://www.curseforge.com/minecraft/mc-mods",
+      "描述": "CurseForge 是目前最大的 Minecraft 模組庫，擁有數萬個模組。"
+    }
+  }
+}

@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的 GitHub Pages 網站</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <h1>歡迎來到我的 GitHub Pages 網站！</h1>
-    <p>這是一個簡單的靜態網站範例。</p>
-    <p>訪問我的 <a href="https://github.com/Yunkong-ouo">GitHub</a></p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的 4 宮格導航</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <header class="site-header">
+      <h1>我的導航</h1>
+      <p class="subtitle">常用網站，一鍵直達</p>
+    </header>
+
+    <main class="grid">
+      <!-- 卡片 1 -->
+      <a
+        class="card"
+        href="https://www.google.com"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="card-inner">
+          <div class="icon" aria-hidden="true">🔎</div>
+          <h2>Google</h2>
+          <p>搜尋任何你想知道的事</p>
+        </div>
+      </a>
+
+      <!-- 卡片 2 -->
+      <a class="card" href="https://github.com" target="_blank" rel="noopener">
+        <div class="card-inner">
+          <div class="icon" aria-hidden="true">🐙</div>
+          <h2>GitHub</h2>
+          <p>版本控制與開源社群</p>
+        </div>
+      </a>
+
+      <!-- 卡片 3 -->
+      <a
+        class="card"
+        href="https://www.youtube.com"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="card-inner">
+          <div class="icon" aria-hidden="true">▶️</div>
+          <h2>YouTube</h2>
+          <p>學習與娛樂的影音平台</p>
+        </div>
+      </a>
+
+      <!-- 卡片 4 -->
+      <a
+        class="card"
+        href="https://www.wikipedia.org"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="card-inner">
+          <div class="icon" aria-hidden="true">📚</div>
+          <h2>Wikipedia</h2>
+          <p>自由的百科全書</p>
+        </div>
+      </a>
+    </main>
+
+    <footer class="site-footer">
+      <button class="theme-toggle" aria-label="切換主題">切換主題</button>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>
