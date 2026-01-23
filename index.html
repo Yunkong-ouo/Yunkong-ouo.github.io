@@ -1,77 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>我的 4 宮格導航</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:," />
-  </head>
-  <body>
-    <div class="bg"></div>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人首頁 | My Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <header class="site-header">
-      <h1>我的導航</h1>
-      <p class="subtitle">常用網站，一鍵直達</p>
-    </header>
-
-    <main class="grid">
-      <!-- 卡片 1 -->
-      <a
-        class="card"
-        href="https://www.google.com"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="card-inner">
-          <div class="icon" aria-hidden="true">🔎</div>
-          <h2>Google</h2>
-          <p>搜尋任何你想知道的事</p>
+    <nav class="navbar">
+        <div class="logo">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="url(#paint0_linear)" stroke-width="2"/>
+                <path d="M9 8.5C9 8.5 12.1818 10 12.5 13C12.8182 16 9.5 17 9.5 17M15 12L12 9M15 12L18 15" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#805AD5"/>
+                        <stop offset="1" stop-color="#4F46E5"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear" x1="9.5" y1="8.5" x2="15.5" y2="15.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#9F7AEA"/>
+                        <stop offset="1" stop-color="#667EEA"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="logo-text">YOUR NAME</span> 
         </div>
-      </a>
+    </nav>
 
-      <!-- 卡片 2 -->
-      <a class="card" href="https://github.com" target="_blank" rel="noopener">
-        <div class="card-inner">
-          <div class="icon" aria-hidden="true">🐙</div>
-          <h2>GitHub</h2>
-          <p>版本控制與開源社群</p>
-        </div>
-      </a>
+    <main class="container">
+        <h1 class="site-title" id="mainTitle">網站名字</h1>
 
-      <!-- 卡片 3 -->
-      <a
-        class="card"
-        href="https://www.youtube.com"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="card-inner">
-          <div class="icon" aria-hidden="true">▶️</div>
-          <h2>YouTube</h2>
-          <p>學習與娛樂的影音平台</p>
+        <div class="grid-layout">
+            <a href="https://google.com" class="nav-card">
+                <div class="icon">🚀</div>
+                <span>進入入口</span>
+            </a>
+            <a href="#" class="nav-card">
+                <div class="icon">🎨</div>
+                <span>設計作品</span>
+            </a>
+            <a href="#" class="nav-card">
+                <div class="icon">📷</div>
+                <span>攝影紀錄</span>
+            </a>
+            <a href="#" class="nav-card">
+                <div class="icon">✉️</div>
+                <span>聯絡我</span>
+            </a>
         </div>
-      </a>
-
-      <!-- 卡片 4 -->
-      <a
-        class="card"
-        href="https://www.wikipedia.org"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="card-inner">
-          <div class="icon" aria-hidden="true">📚</div>
-          <h2>Wikipedia</h2>
-          <p>自由的百科全書</p>
-        </div>
-      </a>
     </main>
 
-    <footer class="site-footer">
-      <button class="theme-toggle" aria-label="切換主題">切換主題</button>
-    </footer>
-
-    <script src="script.js" defer></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
