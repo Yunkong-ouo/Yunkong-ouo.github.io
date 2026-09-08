@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>支付方式</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="page-header">
+        <a href="index.html" class="back-btn"> ← 返回主頁 </a>
+
+        <div class="page-title">
+          <h1 id="paymentTitle">銀行卡支付</h1>
+
+          <p id="paymentSubtitle">支付記帳明細</p>
+        </div>
+      </header>
+
+      <!-- Summary -->
+
+      <section class="detail-summary-grid">
+        <div class="detail-summary-card">
+          <span> 使用次數 </span>
+
+          <strong id="detailCount"> 0 </strong>
+        </div>
+
+        <div class="detail-summary-card">
+          <span> 總金額 </span>
+
+          <strong id="detailAmount"> $0 </strong>
+        </div>
+      </section>
+
+      <!-- Add -->
+
+      <section class="card add-record-card">
+        <div class="section-title">
+          <div>
+            <h2>新增支付紀錄</h2>
+
+            <p>輸入金額後新增一筆記帳</p>
+          </div>
+        </div>
+
+        <div class="record-form">
+          <div class="record-input-group">
+            <label for="recordAmount"> 金額 </label>
+
+            <div class="record-amount-input">
+              <span>$</span>
+
+              <input
+                id="recordAmount"
+                type="number"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                placeholder="請輸入金額"
+              />
+            </div>
+          </div>
+
+          <button id="addRecord" class="add-record-btn">＋ 新增紀錄</button>
+        </div>
+      </section>
+
+      <!-- Records -->
+
+      <section class="card records-card">
+        <div class="records-header">
+          <h2>支付明細</h2>
+
+          <p id="recordsDescription">共 0 筆紀錄</p>
+        </div>
+
+        <div id="recordsTableWrapper" class="records-table-wrapper">
+          <table class="records-table">
+            <thead>
+              <tr>
+                <th>日期</th>
+
+                <th>時間</th>
+
+                <th>序號</th>
+
+                <th>金額</th>
+
+                <th>操作</th>
+              </tr>
+            </thead>
+
+            <tbody id="recordsTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="emptyRecords" class="empty-records">
+          <strong> 目前沒有支付紀錄 </strong>
+
+          <span> 新增第一筆支付紀錄吧 </span>
+        </div>
+      </section>
+    </div>
+
+    <script src="payment.js"></script>
+  </body>
+</html>

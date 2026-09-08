@@ -1,0 +1,6 @@
+| 功能   | HTML              | JS              |
+| ---- | ----------------- | --------------- |
+| 首頁總覽 | `index.html`      | 首頁內建            |
+| 現金統計 | `cash.html`       | `cash.js`       |
+| 支付方式 | `payment.html`    | `payment.js`    |
+| 計算機  | `calculator.html` | `calculator.js` |

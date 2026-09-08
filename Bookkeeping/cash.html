@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>現金統計</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="page-header">
+        <a href="index.html" class="back-btn"> ← 返回主頁 </a>
+
+        <div class="page-title">
+          <h1>現金統計</h1>
+
+          <p>現金面額與數量</p>
+        </div>
+      </header>
+
+      <!-- 摘要 -->
+
+      <section class="summary-grid">
+        <div class="summary-card">
+          <span>現金總額</span>
+
+          <strong id="totalAmount"> $0 </strong>
+        </div>
+
+        <div class="summary-card">
+          <span>總張數／枚數</span>
+
+          <strong id="totalCount"> 0 </strong>
+        </div>
+      </section>
+
+      <!-- 現金 -->
+
+      <section class="card cash-card">
+        <div class="section-title">
+          <div>
+            <h2>現金面額</h2>
+
+            <p>輸入數量後會自動計算小計</p>
+          </div>
+        </div>
+
+        <div class="cash-list">
+          <!-- $1 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$1</strong>
+
+              <span>硬幣</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-1"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+                data-value="1"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-1"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $5 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$5</strong>
+
+              <span>硬幣</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-5"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+                data-value="5"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-5"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $10 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$10</strong>
+
+              <span>硬幣</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-10"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+                data-value="10"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-10"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $50 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$50</strong>
+
+              <span>硬幣</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-50"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-50"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $100 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$100</strong>
+
+              <span>鈔票</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-100"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-100"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $500 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$500</strong>
+
+              <span>鈔票</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-500"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-500"> $0 </strong>
+            </div>
+          </div>
+
+          <!-- $1000 -->
+
+          <div class="cash-row">
+            <div class="denomination">
+              <strong>$1,000</strong>
+
+              <span>鈔票</span>
+            </div>
+
+            <div class="quantity">
+              <label> 數量 </label>
+
+              <input
+                id="qty-1000"
+                class="quantity-input"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                placeholder="0"
+              />
+            </div>
+
+            <div class="subtotal">
+              <span> 小計 </span>
+
+              <strong id="subtotal-1000"> $0 </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="cash-total">
+          <div>
+            <span> 現金總額 </span>
+
+            <strong id="cashTotal"> $0 </strong>
+          </div>
+
+          <div>
+            <span> 總數量 </span>
+
+            <strong id="cashCount"> 0 </strong>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="cash.js"></script>
+  </body>
+</html>

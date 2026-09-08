@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>每日收款管理</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="topbar">
+        <div>
+          <h1>每日收款管理</h1>
+          <p id="currentDate"></p>
+        </div>
+
+        <div class="top-actions">
+          <button type="button" id="clearAllBtn" class="danger-btn">
+            清空所有數據
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- 支付方式 -->
+          <section class="card payment-card">
+            <div class="section-title">
+              <h2>支付方式</h2>
+
+              <p>查看支付記帳資料</p>
+            </div>
+
+            <!-- 銀行卡 -->
+            <a href="payment.html?type=bank" class="payment-entry">
+              <div class="payment-entry-top">
+                <div>
+                  <h3>銀行卡支付</h3>
+
+                  <span> 點擊查看記帳 </span>
+                </div>
+
+                <strong class="payment-arrow"> › </strong>
+              </div>
+
+              <div class="payment-summary">
+                <div>
+                  <span>使用次數</span>
+
+                  <strong id="bankCount"> 0 </strong>
+                </div>
+
+                <div>
+                  <span>金額</span>
+
+                  <strong id="bankTotal"> $0 </strong>
+                </div>
+              </div>
+            </a>
+
+            <!-- 電子支付 -->
+            <a href="payment.html?type=electronic" class="payment-entry">
+              <div class="payment-entry-top">
+                <div>
+                  <h3>電子支付</h3>
+
+                  <span> 點擊查看記帳 </span>
+                </div>
+
+                <strong class="payment-arrow"> › </strong>
+              </div>
+
+              <div class="payment-summary">
+                <div>
+                  <span>使用次數</span>
+
+                  <strong id="electronicCount"> 0 </strong>
+                </div>
+
+                <div>
+                  <span>金額</span>
+
+                  <strong id="electronicTotal"> $0 </strong>
+                </div>
+              </div>
+            </a>
+          </section>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <!-- 現金摘要 -->
+          <section>
+            <div class="section-title">
+              <h2>現金統計</h2>
+
+              <p>今日現金總額與張數／枚數</p>
+            </div>
+
+            <div class="summary-grid">
+              <div class="summary-card">
+                <span> 現金總額 </span>
+
+                <strong id="cashTotal"> $0 </strong>
+              </div>
+
+              <div class="summary-card">
+                <span> 總張數／枚數 </span>
+
+                <strong id="cashCount"> 0 </strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- 快速功能 -->
+          <section class="card quick-card">
+            <div class="section-title">
+              <h2>功能</h2>
+
+              <p>常用功能</p>
+            </div>
+
+            <div class="quick-grid">
+              <a href="cash.html" class="quick-entry">
+                <strong> 現金統計 </strong>
+
+                <span> 輸入今日各面額現金 </span>
+              </a>
+
+              <a href="payment.html?type=bank" class="quick-entry">
+                <strong> 銀行卡記帳 </strong>
+
+                <span> 新增銀行卡支付紀錄 </span>
+              </a>
+
+              <a href="payment.html?type=electronic" class="quick-entry">
+                <strong> 電子支付記帳 </strong>
+
+                <span> 新增電子支付紀錄 </span>
+              </a>
+
+              <a href="calculator.html" class="quick-entry">
+                <strong> 計算機 </strong>
+
+                <span> 開啟計算機 </span>
+              </a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- 首頁 JS -->
+    <script src="main.js"></script>
+  </body>
+</html>
