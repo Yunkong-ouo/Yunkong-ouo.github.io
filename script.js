@@ -1,24 +1,22 @@
-// 當網頁載入完成時
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const title = document.getElementById('mainTitle');
-    
-    // 滑鼠移到標題時的小互動
-    title.addEventListener('mouseover', () => {
-        title.style.transition = '0.3s';
-        title.style.letterSpacing = '10px';
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach((card, index) => {
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+
+            card.style.transition =
+                "opacity 0.6s ease, transform 0.6s ease";
+
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+
+        }, 150 + index * 100);
+
     });
 
-    title.addEventListener('mouseout', () => {
-        title.style.letterSpacing = 'normal';
-    });
-
-    // 點擊格子時觸發一個平滑的淡出效果
-    const cards = document.querySelectorAll('.nav-card');
-    cards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            // 如果你想要在跳轉前做點什麼，可以寫在這裡
-            console.log('正在跳轉至：' + card.href);
-        });
-    });
 });
